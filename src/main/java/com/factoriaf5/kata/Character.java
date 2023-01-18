@@ -6,14 +6,6 @@ public class Character {
     private int level;
     private boolean alive;
     private String name;
-    
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public Character(String name) {
         this.health = 1000;
@@ -21,9 +13,26 @@ public class Character {
         this.alive = true;
         this.name= name;
     }
+    
+    public void DealDamage(Character character, int damage){
+        if(character.isAlive()==true){
+            if(damage >= character.getHealth()){
+                character.setAlive(false);
+            }
+            else{
+                character.setHealth(character.getHealth() - damage);
+            }
+        }
+        else{
+            System.out.println(character.getName() + " está muerto!!!");
+        }
+    }
 
-    public void DealDamage(Character character){
-        character.setHealth(this.health-100);
+    public void setName(String name) {
+            this.name = name;
+        } 
+    public String getName() {
+        return name;
     }
 
     public int getHealth() {
@@ -48,6 +57,11 @@ public class Character {
 
     public void setAlive(boolean alive) {
         this.alive = alive;
+    }
+
+    @Override
+    public String toString() {
+        return "Character [health=" + health + ", level=" + level + ", alive=" + alive + ", name=" + name + "]";
     }
 
     
