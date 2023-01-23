@@ -13,6 +13,7 @@ public class CharacterTest {
         Character thanos = new Character("Thanos");
         ironMan.DealDamage(thanos, 100);
         assertEquals(900, thanos.getHealth());
+        
     }
 
 }

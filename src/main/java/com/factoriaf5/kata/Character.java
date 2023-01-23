@@ -13,6 +13,7 @@ public class Character {
         this.alive = true;
         this.name= name;
     }
+
     
     public void DealDamage(Character character, int damage){
         if(character.isAlive()==true){
