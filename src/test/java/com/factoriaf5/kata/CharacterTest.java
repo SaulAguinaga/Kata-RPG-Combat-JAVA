@@ -15,5 +15,15 @@ public class CharacterTest {
         assertEquals(900, thanos.getHealth());
         
     }
+    @Test
+    public void healCharacterTest() {
+
+        Character ironMan = new Character("Iron Man");
+        Character thanos = new Character("Thanos");
+        ironMan.DealDamage(thanos, 100);
+        ironMan.healCharacter(thanos);
+        assertEquals(1500, thanos.getHealth());
+        
+    }
 
 }

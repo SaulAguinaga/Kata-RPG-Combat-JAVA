@@ -16,9 +16,19 @@ public class Character {
 
     
     public void DealDamage(Character character, int damage){
-        if(character.isAlive()==true){
+        if(character.getLevel()>= this.getLevel()+5){
+            damage *= 0.5;
+            System.out.println(damage);
+        }
+        if(character.getLevel()<= this.getLevel()-5){
+            damage *=1.5;
+        }
+        if(character.getName() == this.getName()){
+            System.out.println(character.getName() + " no puede atacarse a sí mismo!!!");
+        }else if(character.isAlive()==true){
             if(damage >= character.getHealth()){
                 character.setAlive(false);
+                character.setHealth(0);
             }
             else{
                 character.setHealth(character.getHealth() - damage);
@@ -26,6 +36,20 @@ public class Character {
         }
         else{
             System.out.println(character.getName() + " está muerto!!!");
+        }
+    }
+    public void healCharacter(Character character){
+        if(character.alive){
+            if (character.getName()==this.getName()) {
+                character.setHealth(1500);
+                System.out.println("La salud de " + this.getName() + " ha subido a 1500");                
+            }
+            else{
+                System.out.println(this.getName() + " sólo puede curarse a sí mismo");
+            }
+        }
+        else{
+            System.out.println("Los muertos no pueden ser curados");
         }
     }
 
