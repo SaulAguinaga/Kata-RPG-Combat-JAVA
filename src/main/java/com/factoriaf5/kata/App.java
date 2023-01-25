@@ -6,8 +6,8 @@ public final class App {
     }
 
     public static void main(String[] args) {
-        Character ironMan = new Character("Iron Man");
-        Character thanos = new Character("Thanos");
+        Character ironMan = new Character("Iron Man", 25);
+        Character thanos = new Character("Thanos", 1);
 
         ironMan.setLevel(45);
         thanos.setLevel(40);

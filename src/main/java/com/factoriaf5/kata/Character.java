@@ -6,13 +6,23 @@ public class Character {
     private int level;
     private boolean alive;
     private String name;
+    private int maxRange;
 
+    public Character(String name, int maxRange) {
+        this.health = 1000;
+        this.level = 1;
+        this.alive = true;
+        this.name = name;
+        this.maxRange = maxRange;
+    }
     public Character(String name) {
         this.health = 1000;
         this.level = 1;
         this.alive = true;
-        this.name= name;
+        this.name = name;
+        this.maxRange = 0;
     }
+    
 
     
     public void DealDamage(Character character, int damage){
@@ -53,6 +63,7 @@ public class Character {
         }
     }
 
+    
     public void setName(String name) {
             this.name = name;
         } 
@@ -87,6 +98,16 @@ public class Character {
     @Override
     public String toString() {
         return "Character [health=" + health + ", level=" + level + ", alive=" + alive + ", name=" + name + "]";
+    }
+
+
+    public int getMaxRange() {
+        return maxRange;
+    }
+
+
+    public void setMaxRange(int maxRange) {
+        this.maxRange = maxRange;
     }
 
     
